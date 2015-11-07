@@ -1,6 +1,6 @@
-/lib/bower_components/
-/lib/node_modules/
-/lib/bower.json/
-/lib/Gruntfile.js
-/lib/npm-debug.log
-/lib/package.json
+lib/lib/bower_components/
+lib/lib/node_modules/
+lib/lib/bower.json/
+lib/lib/Gruntfile.js
+lib/lib/npm-debug.log
+lib/lib/package.json
