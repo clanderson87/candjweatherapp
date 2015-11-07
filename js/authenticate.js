@@ -17,7 +17,7 @@ define(["jquery", "q", "firebase"],
           if (error) {
             console.log("Login Failed!", error);
           } else{
-            console.log("login successful");
+            console.log("login successfu  l");
             // $("#loginRegister").remove();
             // $("#myNav").show();
             
