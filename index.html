@@ -1,83 +1,62 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Movie Viewer</title>
-  <link rel="stylesheet" type="text/css" href="lib/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/lib/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container-fluid">
-<div id="loginRegister">
-  <div class="jumbotron" id="panelContainer">
-    <div class="registerForm" id="registerForm" style="display: none;">
-      <h2>Please register to to use C and J's WeatherApp+</h2>
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label for="registerEmailInput" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="registerEmailInput" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="registerPasswordInput" class="col-sm-2 control-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="registerPasswordInput" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="registerUserButton">Register</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="loginForm" id="loginForm">
-      <h2>Please sign to use C and J's WeatherApp+</h2>
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label for="loginEmailInput" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="loginEmailInput" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="loginPasswordInput" class="col-sm-2 control-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="loginPasswordInput" placeholder="Password">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginUserButton">Sign In</button>
-          </div>
-        </div>
-      </div>
-      <p>You've never been here before? <button class="btn btn-primary btn-xs" role="button" id="registerFormButton">Register here</button></p>
-    </div>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Ollie</h1>
+      <p>is it goin rain?</p>
+          <div class="input-group col-lg-6">
+            <input type="number" id="zip" pattern="[0-9]*" maxlength="5" minlength ="5" class="form-control" placeholder="zip code" value=37221  min="0" required>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">login</button>
+            </span>
+          </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
   </div>
-</div>
-<div id="myNav" style="display: none;">
-  <div class="row row0">
-    <div class="col-xs-12">
-      <div class="navbar navbar-default">
-          <div class="navbar-form navbar-left" role="search">
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+
+
+<!-- Modal Div Wrapper-->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Give us your data so we can sell it</h4>
+          </div>
+          <div class="modal-body">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Enter Zip Code Here" id="searchText">
+              <label for="usr">Username:</label>
+              <input type="email" class="form-control" id="emailInput">
             </div>
-            <button type="submit" class="btn btn-default" id="searchWeatherZip">Submit</button>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="passwordInput">
+            </div>
           </div>
-          <div class="navbar-right">
+          <div class="modal-footer">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" id = "loginUserButton" data-dismiss="modal">login</button>
+              <button type="button" class="btn btn-default" id = "registerUserButton" data-dismiss="modal">register</button>
+            </div>
           </div>
-      </div>
+        </div>
+
     </div>
   </div>
 
-
-</div>
-<div id="savedWeatherSearch" class="row row2"></div>
-</div>
 <script data-main="js/main" src="lib/lib/bower_components/requirejs/require.js"></script>
+<script src="/lib/lib/bower_components/jQuery/dist/jquery.min.js"></script>
+<script src="/lib/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

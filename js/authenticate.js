@@ -17,9 +17,9 @@ define(["jquery", "q", "firebase"],
           if (error) {
             console.log("Login Failed!", error);
           } else{
-            // console.log("login successful");
-            $("#loginRegister").remove();
-            $("#myNav").show();
+            console.log("login successful");
+            // $("#loginRegister").remove();
+            // $("#myNav").show();
             
             
             // Below is an example from movie viewer
@@ -40,12 +40,12 @@ define(["jquery", "q", "firebase"],
 
         getRegister: function(){
           var deferred = q.defer();
-          console.log($('#registerEmailInput').val());
-          console.log($('#registerPasswordInput').val());
-          var newUserEmail = $('#registerEmailInput').val();
+          console.log($('#emailInput').val());
+          console.log($('#passwordInput').val());
+          var newUserEmail = $('#emailInput').val();
           firebaseRef.createUser({
             email    : newUserEmail,
-            password : $('#registerPasswordInput').val()
+            password : $('#passwordInput').val()
             }, function(error, userData) {
                 if (error) {
                   console.log("Error creating user:", error);
@@ -54,7 +54,7 @@ define(["jquery", "q", "firebase"],
                       userEmail: newUserEmail
                     };
                     firebaseRef.child('users').child(userData.uid).set(newUser);
-                    var promiseArray = [newUserEmail, $("#registerPasswordInput").val()];
+                    var promiseArray = [newUserEmail, $("#passwordInput").val()];
 
                     deferred.resolve(promiseArray);
                   }

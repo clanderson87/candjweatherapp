@@ -22,14 +22,14 @@ require(
 
 
 
-  $(document).on('click', '#registerFormButton', function() {
-   console.log("register here button is working and has been clicked");
-  $('#registerForm').show();
-  
-  });
+  // $(document).on('click', '#registerFormButton', function() {
+  //  console.log("register here button is working and has been clicked");
+  // $('#registerForm').show();
+
+  // });
 
   $("#loginUserButton").click(function(){
-    authenticate.logInUser($('#loginEmailInput').val(), $('#loginPasswordInput').val());
+    authenticate.logInUser($('#emailInput').val(), $('#passwordInput').val());
   });
 
   $('#registerUserButton').click(function(){
