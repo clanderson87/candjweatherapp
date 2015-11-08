@@ -15,8 +15,8 @@ requirejs.config({
 
 require(
 
-  ["jquery", "q", "authenticate", "bootstrap", "dataControl"],
-  function($, q, authenticate, bootstrap, dataControl) {
+  ["jquery", "q", "authenticate", "bootstrap", "dataControl", "templates"],
+  function($, q, authenticate, bootstrap, dataControl, templates) {
 
   var firebaseRef = new Firebase("https://candjweatherapp.firebaseio.com/");
 
@@ -25,7 +25,8 @@ $("#searchByZip").click(function(){
   dataControl.weatherSearch(zip)
   .then(function(weatherResults){
     console.log("weatherResults", weatherResults);
-    $("#testWeatherOutput").html(weatherResults);
+    templates.loadWeatherHbs();
+    // $("#testWeatherOutput").append(weatherResults);
   });
 });
 
@@ -43,7 +44,7 @@ $("#searchByZip").click(function(){
 
   $("#loginUserButton").click(function(){
     authenticate.logInUser($('#emailInput').val(), $('#passwordInput').val());
-    getWeather();
+    // getWeather();
     });
 
   $('#registerUserButton').click(function(){
