@@ -1,5 +1,5 @@
-define(["jquery", "q", "firebase"],
-  function($, q, firebase) {
+define(["jquery", "q", "firebase", "templates"],
+  function($, q, firebase, templates) {
 
   var firebaseRef = new firebase("https://candjweatherapp.firebaseio.com/");
   // consolidating modules to prevent from going back and forth between files so much

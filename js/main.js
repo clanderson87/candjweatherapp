@@ -21,31 +21,37 @@ require(
   var firebaseRef = new Firebase("https://candjweatherapp.firebaseio.com/");
 
 
-$("#searchByZip").click(function(){
-  var zip = $('#zip').val();
-  dataControl.weatherSearch(zip)
-  .then(function(weatherSearch){
-    console.log("weatherSearch", weatherSearch);
-    templates.loadWeatherHbs(weatherSearch);
-    // $("#testWeatherOutput").append(weatherSearch);
+  $("#searchByZip").click(function(){
+    var zip = $('#zip').val();
+    dataControl.weatherSearch(zip)
+    .then(function(weatherSearch){
+      console.log("weatherSearch", weatherSearch);
+      templates.loadWeatherHbs(weatherSearch);
+    });
   });
-});
 
+  // $("#saveSearchButton").on("click", function(){
+  //   console.log("please work");
 
-  // var getWeather = function(zip){
-  // zip = $('#zip').val();
-  //     $.ajax({
-  //         url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip +",us&units=imperial&APPID=5194556d508058f5c7a03fec4d5b05f0"
-  //         }).done(function(weatherData) {
-  //           // Execute the callback function that was sent to me
-  //               console.log(zip, weatherData);
-  //               $("#testWeatherOutput").append(zip, weatherData);
-  //         })
-  //       }
+  // });
+
+ $("#saveSearchButton").click(function(){
+    console.log("please work");
+
+  });
+
+ $("#pleaseWork").on("click", function(){
+    console.log("the muhfkn green button is responsive");
+ });
+  // $("#saveSearchButton").on("click", function(){
+  //   console.log("WTF Muhfuka");
+  //   // alert("your saveSearch button worked");
+  // });
+
+ 
 
   $("#loginUserButton").click(function(){
     authenticate.logInUser($('#emailInput').val(), $('#passwordInput').val());
-    // getWeather();
     });
 
   $('#registerUserButton').click(function(){
@@ -54,7 +60,6 @@ $("#searchByZip").click(function(){
       var password = authArray[1];
       authenticate.logInUser(email, password);
     });
-    // getWeather();
     }
   )
 
