@@ -22,11 +22,12 @@ require(
 
 
 $("#searchByZip").click(function(){
+  var zip = $('#zip').val();
   dataControl.weatherSearch(zip)
-  .then(function(weatherResults){
-    console.log("weatherResults", weatherResults);
-    templates.loadWeatherHbs();
-    // $("#testWeatherOutput").append(weatherResults);
+  .then(function(weatherSearch){
+    console.log("weatherSearch", weatherSearch);
+    templates.loadWeatherHbs(weatherSearch);
+    // $("#testWeatherOutput").append(weatherSearch);
   });
 });
 
