@@ -14,11 +14,22 @@
           <div class="input-group col-lg-6">
             <input type="number" id="zip" pattern="[0-9]*" maxlength="5" minlength ="5" class="form-control" placeholder="zip code" value=37221  min="0" required>
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">login</button>
+              <button class="btn btn-default" type="button" id="searchByZip">Search by Zip</button>
+              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal" id="modalInit">login</button>
             </span>
           </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
   </div>
+
+ 
+<div class="container">
+  <span>
+  <div id="testWeatherOutput" class="row row2">How's the weather in your hood?</div>
+  </span>
+<div>
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+
 
 <!-- Modal Div Wrapper-->
   <div id="myModal" class="modal fade" role="dialog">
@@ -33,17 +44,17 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="usr">Username:</label>
-              <input type="text" class="form-control" id="username">
+              <input type="email" class="form-control" id="emailInput">
             </div>
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="passwordInput">
             </div>
           </div>
           <div class="modal-footer">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default" id = "login" data-dismiss="modal">login</button>
-              <button type="button" class="btn btn-default" id = "register" data-dismiss="modal">register</button>
+              <button type="button" class="btn btn-default" id = "loginUserButton" data-dismiss="modal">login</button>
+              <button type="button" class="btn btn-default" id = "registerUserButton" data-dismiss="modal">register</button>
             </div>
           </div>
         </div>
@@ -51,7 +62,6 @@
     </div>
   </div>
 
-<script src="/lib/lib/bower_components/jQuery/dist/jquery.min.js"></script>
-<script src="/lib/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script data-main="js/main" src="lib/lib/bower_components/requirejs/require.js"></script>
 </body>
 </html>
