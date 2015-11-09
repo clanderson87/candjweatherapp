@@ -1,9 +1,7 @@
-<h2 class= "cityName">{{city.name}}<div class = "mainTemp">{{list.main.temp}}</div></h2>
-  <div class = "lowTemp">{{list.main.temp_min}}</div><div class = "highTemp">{{list.main.temp_max}}</div>
+<h2 class= "cityName">{{name}}<div class = "mainTemp">{{main.temp}}</div></h2>
+  <div class = "lowTemp">{{main.temp_min}}</div><div class = "highTemp">{{main.temp_max}}</div>
 
-  <h1 class = "conditions">{{list.weather.main}},
-{{list.weather.description}}</h1>
+  <h1 class = "conditions">{{weather.main}},
+{{weather.description}}</h1>
 
   <h4 class = "atmos">Atmospheric Bullshit: {{list.wind.speed}}, {{list.wind.deg}} {{list.main.humidity}}, {{list.main.grnd_level}}</h4>
-
-

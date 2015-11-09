@@ -5,7 +5,8 @@ requirejs.config({
     "q": "../lib/lib/bower_components/q-bower/q",
     "bootstrap": "../lib/lib/bower_components/bootstrap/dist/js/bootstrap.min",
     "hbs": "../lib/lib/bower_components/require-handlebars-plugin/hbs",
-    "firebase" : "../lib/lib/bower_components/firebase/firebase"
+    "firebase" : "../lib/lib/bower_components/firebase/firebase",
+    "handlebars" : "../lib/lib/bower_components/require-handlebars-plugin/hbs"
   },
   shim: {
     "bootstrap": ["jquery"],
@@ -13,10 +14,27 @@ requirejs.config({
   }
 });
 
+// define(["hbs",
+//             "hbs!../templates/dogfood",
+//             "hbs!../templates/catfood"],
+//     function(handlebars, dogTmpl, catTmpl) {
+
+//       return {
+//         dogTmpl: function(fbObject) {
+//           // console.log("dogTmpl is here!");
+//           return dogTmpl(fbObject);
+//         },
+//         catTmpl: function(fbObject) {
+//           // console.log("catTmpl is here!");
+//           return catTmpl(fbObject);
+//         }
+//       };
+// });
+
 require(
 
-  ["jquery", "q", "authenticate", "bootstrap"],
-  function($, q, authenticate, bootstrap) {
+  ["jquery", "q", "authenticate", "bootstrap", "LoadHBS"],
+  function($, q, authenticate, bootstrap, LoadHBS) {
 
   var firebaseRef = new Firebase("https://candjweatherapp.firebaseio.com/");
 
@@ -36,6 +54,9 @@ require(
           }).success(function(weatherData) {
             // Execute the callback function that was sent to me
                 console.log(zip, weatherData);
+                $('#input').hide();
+                LoadHBS.weatherHbs(weatherData);
+                console.log(weatherData.weather[0]);
           })
         }
 
